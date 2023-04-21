@@ -18,8 +18,6 @@ In the Stimulus Controller
 1. To check if the `errorMessage` target exists, I should use `this.hasErrorMessageTarget` (capitalize the first letter)
 2. And if I want to get the `errorMessage` target, I should use `this.errorMessageTarget`. (add suffix `Target`)
 
-```html
-
 ### Pain 2
 
 If I want to set controller target in the HTML, I should think about the naming convention of Stimulus and manually add `data-` prefix to the target name.
