@@ -1,6 +1,6 @@
 {
   "name": "stimulus-magic",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A helper for your Stimulus Controllers",
   "main": "index.js",
   "scripts": {
