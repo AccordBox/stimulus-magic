@@ -13,15 +13,18 @@ export default class extends Controller {
 }
 ```
 
-In the Javascript, if I want to check if the `errorMessage` target exists, I should use `this.hasErrorMessageTarget` and if I want to get the `errorMessage` target, I should use `this.errorMessageTarget`. 
+In the Stimulus Controller
 
-As you can, to get `hasErrorMessageTarget` from `errorMessage`, I need to **manually** capitalize the first letter of the target name.
+1. To check if the `errorMessage` target exists, I should use `this.hasErrorMessageTarget` (capitalize the first letter)
+2. And if I want to get the `errorMessage` target, I should use `this.errorMessageTarget`. (add suffix `Target`)
+
+```html
 
 ### Pain 2
 
 If I want to set controller target in the HTML, I should think about the naming convention of Stimulus and manually add `data-` prefix to the target name.
 
-## Solution
+## Better Solution
 
 This package can help you solve the above problems
 
