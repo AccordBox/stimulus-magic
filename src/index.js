@@ -1,3 +1,5 @@
+import { Controller } from '@hotwired/stimulus';
+
 /* eslint-disable no-unused-vars */
 
 function camelize(value) {
@@ -14,10 +16,13 @@ function dasherize(value) {
 }
 /* eslint-enable no-unused-vars */
 
-export const useMagic = (controller, options) => {
-  let { prop, verbose } = options;
-  prop = prop || "magic";
-  verbose = verbose || false;
+const defaultOptions = {
+  prop: 'magic',
+  verbose: true,
+};
+
+export const useMagic = (controller, options={}) => {
+  const { prop, verbose } = Object.assign({}, defaultOptions, options);
 
   controller[prop] = {
     targets: new window.Proxy(controller, {
@@ -109,3 +114,13 @@ export const useMagic = (controller, options) => {
     /* eslint-enable no-unused-vars */
   }
 };
+
+export class MagicController extends Controller {
+
+  static magicOptions;
+
+  constructor(context) {
+    super(context);
+    useMagic(this, this.constructor.magicOptions);
+  }
+}
