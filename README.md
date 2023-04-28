@@ -103,9 +103,15 @@ I prefer to turn it on during development and copy if I need, which is very stra
 
 ## Install
 
+### NPM
+
 ```bash
 $ npm install stimulus-magic
 ```
+
+### Without Build System
+
+TODO
 
 ## Usage 1: Composing
 
