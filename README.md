@@ -1,5 +1,9 @@
 # README
 
+<p align="center">
+  <img src="./misc/code-block.png" />
+</p>
+
 ## The Pain of the Stimulus Naming Conventions
 
 ### Pain 1
@@ -48,19 +52,19 @@ Then a `magic` object is added to the Stimulus controller, you can use it to man
 
 ```js
 // target singular 
-console.log(this.magic.target.modalContent);
+this.magic.target.modalContent;
 
 // target plural
-console.log(this.magic.targets.modalContent);
+this.magic.targets.modalContent;
 
 // target existential
-console.log(this.magic.hasTarget.modalContent);
+this.magic.hasTarget.modalContent;
 
 // value existential
-console.log(this.magic.hasValue.url);
+this.magic.hasValue.url;
 
 // value getter
-console.log(this.magic.value.url);
+this.magic.value.url;
 
 // value setter
 this.magic.value.url = 'https://stimulus.hotwired.dev/';
