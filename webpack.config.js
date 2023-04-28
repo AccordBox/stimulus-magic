@@ -1,4 +1,5 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
+// https://stackoverflow.com/questions/68913996/use-webpack-5-to-build-an-es-module-bundle-and-consume-that-bundle-in-a-node-js
 
 const path = require('path');
 
@@ -10,7 +11,12 @@ const config = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'index.js',
-        libraryTarget: 'commonjs2'
+        library: {
+            type: "module",
+        },
+    },
+    experiments: {
+        outputModule: true,
     },
     plugins: [
         // Add your plugins here
