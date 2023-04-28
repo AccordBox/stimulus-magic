@@ -9,6 +9,7 @@
     "build:prod": "webpack --mode=production --node-env=production",
     "watch": "webpack --watch"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/AccordBox/stimulus-magic"
