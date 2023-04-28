@@ -30,7 +30,7 @@ Assume we have controller:
 
 ```js
 import { Controller } from "@hotwired/stimulus"
-import { useMagic } from "./stimulus-magic";
+import { useMagic } from "stimulus-magic";
 
 export default class extends Controller {
   static targets = [ "modalContent"]
@@ -111,7 +111,32 @@ $ npm install stimulus-magic
 
 ### Without Build System
 
-TODO
+```html
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script type="module">
+    import { Application, Controller } from "https://unpkg.com/@hotwired/stimulus/dist/stimulus.js"
+    import { useMagic } from "https://unpkg.com/stimulus-magic/dist/index.js";
+
+    window.Stimulus = Application.start()
+
+    Stimulus.register("hello", class extends Controller {
+      static targets = [ "name" ]
+
+      connect() {
+        useMagic(this, {verbose: true});
+      }
+      
+    })
+  </script>
+</head>
+<body>
+
+</body>
+</html>
+```
 
 ## Usage 1: Composing
 
@@ -119,7 +144,7 @@ This package is composable, which means you can use it with any Stimulus control
 
 ```js
 import { Controller } from "@hotwired/stimulus"
-import { useMagic } from "./stimulus-magic";
+import { useMagic } from "stimulus-magic";
 
 export default class extends Controller {
   connect() {
@@ -145,7 +170,7 @@ Or you can extend the base class
 
 ```js
 import { Controller } from "@hotwired/stimulus"
-import { MagicController } from "./stimulus-magic";
+import { MagicController } from "stimulus-magic";
 
 export default class extends MagicController {
   
